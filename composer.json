@@ -1,0 +1,21 @@
+{
+  "name": "frankfleige/phpunitplayground",
+  "description": "a project to play around with PHPUnit",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Frank Fleige",
+      "email": "frank@frankfleige.de"
+    }
+  ],
+  "require": {
+    "phpunit/phpunit": "6.2.3"
+  },
+  "autoload" : {
+    "psr-4": {
+      "FrankFleige\\PHPUnitPlayground\\" : "src/",
+      "FrankFleige\\PHPUnitPlayground\\Test\\" : "test/"
+    }
+  }
+}
