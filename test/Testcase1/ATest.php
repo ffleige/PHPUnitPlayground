@@ -24,7 +24,7 @@ class ATest extends TestCase
      */
     public function testSayBadHello()
     {
-        $a = new A(null);
+        $a = new A(new B());
         $this::assertEquals("Hello ", substr($a->sayBadHello(),0, 6));
     }
 
@@ -37,10 +37,11 @@ class ATest extends TestCase
     public function testSayBetterHello() {
         $mockA = $this->getMockBuilder(A::class)
             ->setMethods(['getName'])
+            ->setConstructorArgs([new B()])
             ->getMock();
         $mockA->expects($this->any())->method('getName')->willReturn('Frank');
-        /** @var $stubA A */
-        $this::assertEquals("Hello Frank", $stubA->sayBetterHello());
+        /** @var $mockA A */
+        $this::assertEquals("Hello Frank", $mockA->sayBetterHello());
     }
 
     /**
@@ -54,6 +55,7 @@ class ATest extends TestCase
             ->setMethods(['getName'])
             ->getMock();
         $stubB->expects($this->any())->method('getName')->willReturn('Frank');
+        /** @var B $stubB */
         $a = new A($stubB);
         $this::assertEquals("Hello Frank", $a->sayBestHello());
     }

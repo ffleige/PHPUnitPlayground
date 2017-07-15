@@ -17,6 +17,7 @@ class A
     /**
      * the name provider
      * @var B
+     * @Inject
      */
     private $nameProvider;
 
@@ -24,7 +25,7 @@ class A
      * A constructor.
      * @param B|null $nameProvider class that will provide the random name
      */
-    public function __construct(B $nameProvider = null)
+    public function __construct(B $nameProvider)
     {
         $this->nameProvider = $nameProvider;
     }
