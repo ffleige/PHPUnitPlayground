@@ -23,6 +23,7 @@ class PetService
 
     /**
      * @var PetFactory
+     * @Inject
      */
     private $petFactory;
 
