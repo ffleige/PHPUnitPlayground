@@ -22,7 +22,7 @@
  
 ## writing the unit tests
 
-### the challange
+### the challenge
  ```php
      public function testGetEntitlements() {
          $a = new A();
